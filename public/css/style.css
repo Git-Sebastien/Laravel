@@ -1,0 +1,33 @@
+.title {
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul,
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text-intro {
+    margin-top: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(167, 66, 66);
+}
+
+.card-post {
+    padding: 0;
+}
+
+.card-text,
+.card-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -16,25 +16,21 @@
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        
-
+    
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/IntersectionObserver') }}"></script>
         <script src="{{ asset('js/Burger.js') }}"defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="container">
-            <div class="min-h-screen bg-gray-100">
-                @include('layouts.navigation')
-
-                <!-- Page Heading -->
-
-                <!-- Page Content -->
-                <main>
-                    
-                </main>
-            </div>
+        <div class="min-h-screen  container">
+            @include('layouts.navigation')
+            <x-banner/>   
+            <x-card-post/>
+            <main>
+                <x-card-post-mini/>
+                <x-card-about/>
+            </main>
         </div>
     </body>
 </html>
