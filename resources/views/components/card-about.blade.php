@@ -1,4 +1,4 @@
-<div class="card mb-3 mt-5 w-75 m-auto">
+<div class="card mb-3 mt-5 w-75 m-auto reveal reveal-3">
     <div class="row g-0">
       <div class="col-md-8 text-card">
         <div class="card-body background">

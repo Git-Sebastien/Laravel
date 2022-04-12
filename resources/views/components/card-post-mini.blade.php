@@ -1,4 +1,4 @@
-<div class="row w-75 mt-5" style="margin: auto;">
+<div class="row w-75 mt-5 reveal reveal-4" style="margin: auto;">
     <div class="col-sm-3 card-post" style="margin-right: auto;">
       <div class="card h-100">
         <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="...">

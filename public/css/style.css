@@ -39,13 +39,13 @@ button {
 
 [class*="reveal-"] {
     opacity: 0;
-    transform: translateX(-60px);
+    transform: translateY(-30px);
 }
 
-.reveal-visible-from-top {
+.reveal-visible {
     opacity: 1;
-    transform: translateX(100px);
-    transition: .4s ease-in-out;
+    transform: translateY(0px);
+    transition: .9s ease-in-out;
 }
 
 .reveal-1 {

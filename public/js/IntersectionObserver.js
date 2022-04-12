@@ -1,4 +1,4 @@
-const ratio = .1;
+const ratio = .8;
 
 let options = {
     root: null,
@@ -9,11 +9,9 @@ let options = {
 const handleIntersect = (entries, observer) => {
     entries.forEach(function(entry) {
         if (entry.intersectionRatio > ratio) {
-            entry.target.classList.add('reveal-visible-from-top');
-            entry.target.classList.add('reveal-visible-from-left')
+            entry.target.classList.add('reveal-visible');
             observer.unobserve(entry.target)
         }
-
     });
 }
 
