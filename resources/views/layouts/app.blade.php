@@ -19,7 +19,7 @@
     
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/IntersectionObserver') }}"></script>
+        <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
         <script src="{{ asset('js/Burger.js') }}"defer></script>
     </head>
     <body class="font-sans antialiased">
