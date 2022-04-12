@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
-@section('create')
 
+@section('create')
+    <x-create-post />
 @endsection

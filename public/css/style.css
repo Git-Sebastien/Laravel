@@ -37,6 +37,11 @@ button {
     background-color: rgba(245, 245, 245, .5);
 }
 
+.form-create {
+    margin-top: 150px;
+    margin-bottom: 240px;
+}
+
 [class*="reveal-"] {
     opacity: 0;
     transform: translateY(-30px);

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Posts;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -14,7 +16,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('layouts.app');
+        $post = DB::table('posts')->orderBy('content','asc')->get();
+        return view('posts.index',compact('post'));
     }
 
     /**
@@ -24,7 +27,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -35,7 +38,21 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=> 'required|max:30',
+            'author'=>'required',
+            'content'=>'required|max:255'
+        ]);
+
+        $posts = Post::create([
+            'title'=>$request->input('title'),
+            'author'=>$request->input('author'),
+            'content'=>$request->input('content'),
+        ]);
+
+        $posts->save();
+
+        return redirect('/');
     }
 
     /**
@@ -44,9 +61,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id)
     {
-        //
+        
     }
 
     /**
