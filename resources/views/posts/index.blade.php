@@ -2,7 +2,7 @@
 
 @section('index')
 @foreach ($post as $data)
-    <x-card-post title="{{ $data->title }}" content="{{ $data->content }}"/>
+    <x-card-post title="{{ Str::of($data->title)->toHtmlString }}" content="{{ Str::of($data->content)->toHtmlString }}"/>
 @endforeach
 
 @endsection

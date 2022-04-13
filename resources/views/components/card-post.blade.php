@@ -1,4 +1,4 @@
-<div class="card mb-3 mt-5 w-75 m-auto reveal reveal-5">
+<div class="card mb-3 mt-5 w-75 m-auto reveal reveal-2">
   <div class="row g-0">
       <div class="col-md-4">
           <img src="https://via.placeholder.com/400x250" class="img-fluid rounded-start" alt="...">
