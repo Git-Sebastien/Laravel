@@ -3,4 +3,4 @@
 
 @section('create')
     <x-create-post />
-@endsection
+@endsection 

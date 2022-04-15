@@ -1,6 +1,23 @@
+body {
+    background-attachment: fixed;
+}
+
 .title {
     text-transform: uppercase;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(167, 66, 66);
+}
+
+.title-category {
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 120px;
+}
+
+.title-category::before {
+    content: '|';
+    color: rgb(167, 66, 66);
 }
 
 ul,
@@ -9,19 +26,40 @@ button {
 }
 
 .banner {
-    display: flex;
-    justify-content: space-evenly;
+    position: relative;
+    height: 765px;
+    width: auto;
+    height: 600px;
+    background: url('/images/test_edited.jpg');
+}
+
+.banner a {
+    position: absolute;
+    right: 150px;
+    bottom: 33px;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.banner a:hover {
+    transform: translateX(15px);
+    transition: transform .4s ease-out;
 }
 
 .text-intro {
-    margin-top: 100px;
-    width: 44%;
-    text-transform: uppercase;
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    margin: auto;
+    width: 30%;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-decoration: underline;
-    text-decoration-color: rgb(167, 66, 66);
+    color: white;
 }
 
 .card-post {
@@ -33,6 +71,29 @@ button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.card-link {
+    cursor: pointer;
+    float: right;
+    margin-right: 60px;
+    text-decoration: none;
+    color: rgb(167, 66, 66);
+}
+
+.card-link:hover {
+    color: black;
+    transform: translateX(15px);
+    transition: transform .3s ease-in-out;
+}
+
+.card-author {
+    margin-top: 50px;
+}
+
+.card-image {
+    width: 100%;
+    height: 498px;
+}
+
 .background {
     background-color: rgba(245, 245, 245, .5);
 }
@@ -42,33 +103,31 @@ button {
     margin-bottom: 240px;
 }
 
-[class*="reveal-"] {
+.fade-in {
     opacity: 0;
-    transform: translateY(-30px);
+    transition: opacity 730ms ease-in-out;
 }
 
-.reveal-visible {
+.fade-in.appear {
     opacity: 1;
-    transform: translateY(0px);
-    transition: .9s ease-in-out;
 }
 
-.reveal-1 {
-    transition: .3s;
+.from-right {
+    transform: translateX(10%);
 }
 
-.reveal-2 {
-    transition: .6s;
+.from-left {
+    transform: translateX(-10%);
 }
 
-.reveal-3 {
-    transition: .9s;
+.from-left,
+.from-right {
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
 }
 
-.reveal-4 {
-    transition: 1.2s;
-}
-
-.reveal-5 {
-    transition: 1.4s;
+.from-left.appear,
+.from-right.appear {
+    opacity: 1;
+    transform: translateX(0);
 }

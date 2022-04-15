@@ -41,7 +41,7 @@ class PostsController extends Controller
         $request->validate([
             'title'=> 'required|max:30',
             'author'=>'required',
-            'content'=>'required|max:255'
+            'content'=>'required|max:6000'
         ]);
 
         $posts = Post::create([
@@ -63,7 +63,8 @@ class PostsController extends Controller
      */
     public function show(int $id)
     {
-        
+        $post = Post::find($id);
+        return view('posts.show',compact('post'));
     }
 
     /**
@@ -98,5 +99,14 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function objectSort($object)
+    {
+        $data = null;
+            foreach($object as $value){
+                $data = $value;
+            }
+        return $data;
     }
 }

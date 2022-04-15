@@ -1,5 +1,5 @@
-<div class="banner border border-grey background reveal reveal-2">
-    <p class="text-intro p-3 border-bottom">
+<div class="banner fade-in">
+    <p class="text-intro p-3 slide-in from-right">
      {{ __('Another day in life. Another way to improve your creativity.')}}</p>
-    <img src="{{ asset('images/banner.png') }}" alt="" class="banner"/>
+     <a href="#about" class="banner-link slide-in from-left">A propos <i class="fa-solid fa-right-long arrow"></i></a>
 </div>

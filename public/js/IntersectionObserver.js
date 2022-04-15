@@ -1,4 +1,8 @@
-const ratio = .8;
+const ratio = .4;
+
+const fade = document.querySelectorAll('.fade-in');
+const slide = document.querySelectorAll('.slide-in')
+
 
 let options = {
     root: null,
@@ -9,7 +13,7 @@ let options = {
 const handleIntersect = (entries, observer) => {
     entries.forEach(function(entry) {
         if (entry.intersectionRatio > ratio) {
-            entry.target.classList.add('reveal-visible');
+            entry.target.classList.add('appear');
             observer.unobserve(entry.target)
         }
     });
@@ -17,6 +21,10 @@ const handleIntersect = (entries, observer) => {
 
 const observer = new IntersectionObserver(handleIntersect, options);
 
-document.querySelectorAll('.reveal').forEach(function(r) {
+fade.forEach(function(r) {
+    observer.observe(r);
+})
+
+slide.forEach(function(r) {
     observer.observe(r);
 })

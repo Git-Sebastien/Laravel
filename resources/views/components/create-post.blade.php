@@ -1,4 +1,4 @@
-<h1>{{ __('Création d\'un article') }}</h1>
+<h3 class="title-category border-bottom reveal reveal-4">Creer un article </h3>
 
 <form action="{{ route('posts.store') }}" method="post" class="form-create">
     @csrf

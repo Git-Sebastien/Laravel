@@ -10,12 +10,13 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $post = DB::table('posts')->orderByDesc('content')->get();
+        $post = DB::table('posts')->orderBy('content','asc')->get();
         $objectSort = $this->sortObjectByLast($post);
+        
         return view('index',compact('objectSort'));
     }
 
-    public function sortObjectByLast(Collection $post) :object
+    public function sortObjectByLast(Collection $post) 
     {
         $data = null;
         foreach($post as $value){
