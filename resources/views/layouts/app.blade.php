@@ -22,7 +22,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
-        <script src="{{ asset('js/Burger.js') }}"defer></script>
+        <script src="{{ asset('js/main.js') }}"defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen  container">
@@ -32,6 +32,9 @@
                 @yield('index')
                 @yield('create')
                 @yield('show')
+                @yield('login')
+                @yield('register')
+                @yield('user')
             </main>
             <footer class="text-center text-white" style="background-color: #f1f1f1;">
                 <!-- Copyright -->

@@ -94,6 +94,37 @@ button {
     height: 498px;
 }
 
+.btn-user {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.nav-account li {
+    list-style: none;
+    color: white;
+}
+
+.nav-account {
+    position: absolute;
+    right: 550px;
+    background-color: rgba(1, 1, 1, 0.7);
+    top: 50px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(10%);
+}
+
+.nav-account.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease-in-out;
+}
+
 .background {
     background-color: rgba(245, 245, 245, .5);
 }
@@ -120,8 +151,13 @@ button {
     transform: translateX(-10%);
 }
 
+.from-top {
+    transform: translateY(-10%);
+}
+
 .from-left,
-.from-right {
+.from-right,
+.from-top {
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     opacity: 0;
 }
@@ -130,4 +166,45 @@ button {
 .from-right.appear {
     opacity: 1;
     transform: translateX(0);
+}
+
+.from-top.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.inf-content {
+    border: 1px solid #DDDDDD;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+}
+
+.user-info {
+    margin-top: 150px;
+    margin-bottom: 233px;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.form-file {
+    margin-left: 100px;
+    margin-top: 10px;
 }
