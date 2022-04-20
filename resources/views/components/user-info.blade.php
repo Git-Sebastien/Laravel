@@ -1,5 +1,3 @@
-{{ dd($_FILES) }}
-
 <div class="container bootstrap snippets bootdey user-info">
     <div class="panel-body inf-content">
         <div class="row">

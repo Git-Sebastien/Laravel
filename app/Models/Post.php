@@ -11,7 +11,12 @@ class Post extends Model
     protected $fillable = [
         "title",
         "content",
-        "author"
+        "author",
     ];
     use HasFactory;
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

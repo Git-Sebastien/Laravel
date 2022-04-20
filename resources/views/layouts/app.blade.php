@@ -20,9 +20,7 @@
 
     
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
-        <script src="{{ asset('js/main.js') }}"defer></script>
+       
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen  container">
@@ -32,6 +30,8 @@
                 @yield('index')
                 @yield('create')
                 @yield('show')
+                @yield('edit')
+                @yield('edit-comment')
                 @yield('login')
                 @yield('register')
                 @yield('user')
@@ -46,6 +46,9 @@
               </footer>
 
               <script src="https://kit.fontawesome.com/174731608d.js" crossorigin="anonymous"></script>
+              <script src="{{ asset('js/app.js') }}" defer></script>
+              <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
+              <script src="{{ asset('js/main.js') }}" defer></script>
            
         </div>
     </body>

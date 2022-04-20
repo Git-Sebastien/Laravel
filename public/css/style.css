@@ -94,6 +94,12 @@ button {
     height: 498px;
 }
 
+.card-article {
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
 .btn-user {
     background: none;
     color: inherit;
@@ -130,8 +136,9 @@ button {
 }
 
 .form-create {
-    margin-top: 150px;
-    margin-bottom: 240px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 .fade-in {
@@ -207,4 +214,26 @@ button {
 .form-file {
     margin-left: 100px;
     margin-top: 10px;
+}
+
+
+/* Comment */
+
+.card-comment {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 35px;
+    margin-top: 25px;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }

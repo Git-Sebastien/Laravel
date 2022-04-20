@@ -1,4 +1,4 @@
-<div class="card mb-3 mt-5 w-75 m-auto reveal reveal-2">
+<div class="card  w-75 card-article">
     <div class="g-0">
         <div class="col-md-4 card-image">
             <img src="{{ asset('images/demo.jpg') }}" class="rounded-start card-image" alt="...">
@@ -13,5 +13,10 @@
       </div>
     </div>
   </div>
+  <x-card-comment/>
+
+
+
+
       
   

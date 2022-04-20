@@ -1,0 +1,22 @@
+<h3 class="title-category border-bottom reveal reveal-4">Creer un article </h3>
+
+<form action="{{ route('posts.edit',"'") }}" method="post" class="form-create">
+    @csrf
+    <div class="row">
+        <div class="mb-3 col-sm-6">
+          <label for="author" class="form-label">{{ __('Nom') }}</label>
+          <input type="text" class="form-control" id="author" placeholder="Mon nom..." name="author" value="{{ $name }}">
+        </div>
+        <div class="mb-3 col-sm-6" >
+          <label for="title" class="form-label">{{ __('Titre') }}</label>
+          <input type="text" class="form-control" id="title" placeholder="Mon titre" name="title" value="{{ $title }}">
+        </div>
+    </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">{{ __('Contenu') }}</label>
+          <textarea class="form-control" id="createArea" rows="9" placeholder="Mon contenu" name="content" value="{{ $content }}"></textarea>
+        </div>
+     
+   
+      <button type="submit" class="btn btn-outline-primary mt-2">{{ __('Publier') }}</button>
+</form>

@@ -14,7 +14,7 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $post = DB::table('posts')->orderBy('content','asc')->get();
         return view('posts.index',compact('post'));
@@ -61,9 +61,11 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show(int $id,Request $request)
     {
         $post = Post::find($id);
+        $request->session()->put('post_id', $post->id);
+        $request->session()->save();
         return view('posts.show',compact('post'));
     }
 
@@ -75,7 +77,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit',compact('post'));
     }
 
     /**
@@ -98,7 +101,11 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->delete();
+
+        return redirect('posts');
     }
 
     public function objectSort($object)

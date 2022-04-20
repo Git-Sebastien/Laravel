@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Posts\CommentController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Posts\PostsController;
 
@@ -18,8 +19,17 @@ use App\Http\Controllers\Posts\PostsController;
 
 Route::get('/',HomeController::class)->name('home');
 
-Route::resource('/posts',PostsController::class);
+Route::resource('/posts',PostsController::class,);
 
+Route::post('/comment',[CommentController::class,'postComment'])->name('postComment')->middleware('web');
+
+Route::post('/comment-delete/{comment}',[CommentController::class,'destroy'])->name('destroyComment')->middleware('web');
+
+Route::get('/comment-edit/{id}',[CommentController::class,'editComment'])->name('editComment')->middleware('web');
+
+Route::patch('/comment-update/{id}',[CommentController::class,'updateComment'])->name('updateComment')->middleware('web');
+
+Route::post('/posts/{post}',[PostsController::class,'show'])->name('show_post');
 
 Route::get('/user-info/{id}/{name}',[UserController::class,'userInfos'])->name('user');
 
