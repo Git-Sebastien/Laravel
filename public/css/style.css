@@ -2,11 +2,19 @@ body {
     background-attachment: fixed;
 }
 
+header {
+    position: sticky;
+    top: 10px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .7);
+}
+
 .title {
     text-transform: uppercase;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: underline;
     text-decoration-color: rgb(167, 66, 66);
+    color: white;
 }
 
 .title-category {
@@ -71,6 +79,22 @@ button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.nav-link:hover {
+    color: rgb(167, 66, 66);
+}
+
+.nav-link {
+    color: white;
+}
+
+.dropdown-menu a:hover {
+    color: rgb(167, 66, 66);
+}
+
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, .7);
+}
+
 .card-link {
     cursor: pointer;
     float: right;
@@ -108,16 +132,26 @@ button {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    color: white;
 }
 
+.btn-user:hover {
+    color: rgb(167, 66, 66);
+}
+
+.nav-account li>a,
 .nav-account li {
     list-style: none;
     color: white;
 }
 
+.nav-account a:hover {
+    color: rgb(167, 66, 66);
+}
+
 .nav-account {
     position: absolute;
-    right: 550px;
+    right: 246px;
     background-color: rgba(1, 1, 1, 0.7);
     top: 50px;
     z-index: 1;
@@ -131,8 +165,28 @@ button {
     transition: opacity .4s ease-in-out;
 }
 
+.nav-categories {
+    position: absolute;
+    right: 85vh;
+    background-color: rgba(1, 1, 1, 0.7);
+    top: 50px;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-11%);
+    transition: opacity .4s ease-in-out;
+}
+
+.nav-categories.reveal {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: visibility .4s ease-in-out, transform .4s ease-in, opacity .4s ease-in;
+}
+
 .background {
     background-color: rgba(245, 245, 245, .5);
+    width: 100%;
 }
 
 .form-create {
@@ -235,5 +289,5 @@ input[type="reset"] {
     padding: 0;
     font: inherit;
     cursor: pointer;
-    outline: inherit;
+    outline: 0;
 }

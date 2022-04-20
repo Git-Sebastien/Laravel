@@ -14,7 +14,8 @@ class Comment extends Model
         'content',
         'author',
         'email',
-        'post_id'
+        'post_id',
+        'user_id'
     ];
 
 

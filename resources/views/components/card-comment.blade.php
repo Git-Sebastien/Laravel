@@ -7,8 +7,10 @@
     <div class="card-body">
       <h6 class="card-subtitle mb-2 text-muted">{{ __('Ecrit par ') }} {{ $comment->author }} le {{ $comment->created_at }}</h6>
       <p class="card-text">{{ $comment->content }}</p>
-      <a href="{{ route('editComment',$comment->id) }}" class="card-link">{{ __('Editer') }}</a>
-      <form action="{{ route('destroyComment',$comment->id) }}" method="post">@csrf  <button type="submit" class="card-link">{{ __('Supprimer') }}</button></form>
+      @if (Auth::user()->id == $comment->user_id)
+        <a href="{{ route('editComment',$comment->id) }}" class="card-link">{{ __('Editer') }}</a>
+        <form action="{{ route('destroyComment',$comment->id) }}" method="post">@csrf  <button type="submit" class="card-link">{{ __('Supprimer') }}</button></form>  
+      @endif
     </div>
   </div>
 @endforeach

@@ -20,6 +20,11 @@
 
     
         <!-- Scripts -->
+
+        <script src="https://kit.fontawesome.com/174731608d.js" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
+        <script src="{{ asset('js/main.js') }}" defer></script>
        
     </head>
     <body class="font-sans antialiased">
@@ -45,10 +50,7 @@
                 <!-- Copyright -->
               </footer>
 
-              <script src="https://kit.fontawesome.com/174731608d.js" crossorigin="anonymous"></script>
-              <script src="{{ asset('js/app.js') }}" defer></script>
-              <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
-              <script src="{{ asset('js/main.js') }}" defer></script>
+             
            
         </div>
     </body>

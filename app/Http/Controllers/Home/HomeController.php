@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $post = DB::table('posts')->orderBy('content','asc')->get();
+        $post = DB::table('posts')->orderBy('created_at','asc')->get();
         $objectSort = $this->sortObjectByLast($post); 
            
         
@@ -23,7 +23,6 @@ class HomeController extends Controller
         foreach($post as $value){
             $data = $value;
         }
-
         return $data;
     }
 }

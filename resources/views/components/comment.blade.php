@@ -1,4 +1,4 @@
-<h3 class="title-category border-bottom m-auto w-75 ">Laissez un commentaire</h3>
+<h3 class="title-category border-bottom m-auto w-75" id="comment">Laissez un commentaire</h3>
 <form action="{{ route('postComment') }}" method="post" class="form-create  w-75">
     @csrf
         <div class="row">

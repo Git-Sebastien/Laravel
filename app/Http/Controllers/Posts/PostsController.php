@@ -16,7 +16,8 @@ class PostsController extends Controller
      */
     public function index(Request $request)
     {
-        $post = DB::table('posts')->orderBy('content','asc')->get();
+        $post = DB::table('posts')->orderBy('created_at','desc')->get();
+        $request->session()->forget('post_id');
         return view('posts.index',compact('post'));
     }
 
@@ -104,7 +105,6 @@ class PostsController extends Controller
         $post = Post::find($id);
 
         $post->delete();
-
         return redirect('posts');
     }
 

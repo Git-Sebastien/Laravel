@@ -3,7 +3,7 @@
       <div class="col-md-4">
           <img src="{{ asset('images/demo.jpg') }}" class="img-fluid rounded-start" alt="Image de l'article">
       </div>
-    <div class="col-md-8 background">
+    <div class="col-md-8 ">
       <div class="card-body">
         <h5 class="card-title"> {{ $title }} </h5>
         <p class="card-text"> {{ $content }}</p>
