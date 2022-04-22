@@ -5,17 +5,14 @@
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> 
     <li><a href="{{ route('home') }}" class="nav-link px-2 link-dark">{{ __('Accueil') }}</a></li>
     <li><a href="{{ route('posts.index') }}" class="nav-link px-2 link-dark">{{ __('Articles') }}</a></li>
-    <li><a href="{{ route('posts.create') }}" class="nav-link px-2">{{ __('Creer un article') }}</a></li>
-    <div class="btn-group">
-      <button type="button" class="dropdown-toggle nav-link link-dark" data-bs-toggle="dropdown" aria-expanded="false">
-        {{ __('Categories') }}
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="" class="nav-link px-2 link-dark">{{ __('Developpement') }}</a></li>
-        <li><a href="" class="nav-link px-2 link-dark">{{ __('Actus') }}</a></li>
-        <li><a href="" class="nav-link px-2 link-dark">{{ __('Jeux vidéo') }}</a></li>
-      </ul>
-    </div>
+
+
+    @if (!empty(Auth::user()->role_id) && Auth::user()->role_id == 1)
+      <li><a href="{{ route('posts.create') }}" class="nav-link px-2">{{ __('Creer un article') }}</a></li> 
+    @endif
+
+
+    <x-nav-categories/>
   </ul>
   <div class="col-md-3 text-end d-flex">
     @if (! Auth::user())
@@ -33,3 +30,4 @@
     @endif
   </div>
 </header>
+

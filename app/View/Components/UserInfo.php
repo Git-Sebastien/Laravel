@@ -13,16 +13,22 @@ class UserInfo extends Component
 
     public $createdAt;
 
+    public $route;
+
+    public $image;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name,$email,$createdAt)
+    public function __construct($name,$email,$createdAt,$route,$image)
     {
         $this->name = $name;
         $this->email = $email;
         $this->createdAt = $createdAt;
+        $this->route = $route;
+        $this->image = $image;
     }
 
     /**

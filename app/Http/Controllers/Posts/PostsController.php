@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Posts;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -42,13 +43,15 @@ class PostsController extends Controller
         $request->validate([
             'title'=> 'required|max:30',
             'author'=>'required',
-            'content'=>'required|max:6000'
+            'content'=>'required|max:6000',
+            'categories'=>'required'
         ]);
 
         $posts = Post::create([
             'title'=>$request->input('title'),
             'author'=>$request->input('author'),
             'content'=>$request->input('content'),
+            'category_id'=>(int) $request->input('categories')
         ]);
 
         $posts->save();

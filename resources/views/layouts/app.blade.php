@@ -34,6 +34,7 @@
                 @yield('home')
                 @yield('index')
                 @yield('create')
+                @yield('posts')
                 @yield('show')
                 @yield('edit')
                 @yield('edit-comment')

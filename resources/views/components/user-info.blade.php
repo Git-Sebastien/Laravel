@@ -2,10 +2,13 @@
     <div class="panel-body inf-content">
         <div class="row">
             <div class="col-md-4">
-                <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
-               <form action="" method="post" class="col-md-6 form-file">
+                <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip image-user" src="{{ $image }}" data-original-title="Usuario"> 
+               <form action="{{ $route }}" method="post" class="col-md-6 form-file" enctype="multipart/form-data">
+                @csrf
                 <input type="file" name="image" id="file" class="inputfile" />
                 <label for="file" class="btn btn-outline-secondary">Changer d'avatar</label>
+                <input type="hidden" name="user" value="{{ $name }}">
+                <button type="submit" class="btn btn-outline-success mt-3">Valider</button>
                </form>
             </div>
             <div class="col-md-6">

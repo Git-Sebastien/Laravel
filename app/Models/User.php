@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
+        'image_path'
     ];
 
     /**
@@ -40,6 +42,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    //if Auth::user()->id = comment.id  then  "button edit and delete appear "
 }

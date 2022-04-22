@@ -291,3 +291,7 @@ input[type="reset"] {
     cursor: pointer;
     outline: 0;
 }
+
+.image-user {
+    max-width: 90%;
+}

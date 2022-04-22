@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Category extends Model
 {
-
+    use HasFactory;
+    
     protected $fillable = [
         "title",
         "content",
@@ -15,10 +16,11 @@ class Post extends Model
         "category_id"
     ];
     
-    use HasFactory;
 
-    public function comments()
+    public function posts()
     {
-        return $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Models\Post');
     }
 }
+
+
