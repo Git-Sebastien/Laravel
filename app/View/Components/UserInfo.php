@@ -17,6 +17,7 @@ class UserInfo extends Component
 
     public $image;
 
+
     /**
      * Create a new component instance.
      *

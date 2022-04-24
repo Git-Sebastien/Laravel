@@ -1,16 +1,17 @@
 <div class="container bootstrap snippets bootdey user-info">
     <div class="panel-body inf-content">
         <div class="row">
-            <div class="col-md-4">
-                <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip image-user" src="{{ $image }}" data-original-title="Usuario"> 
-               <form action="{{ $route }}" method="post" class="col-md-6 form-file" enctype="multipart/form-data">
+            <div class="col-md-4 image-user">
+                <img alt="" title="" class="img-circle image-user isTooltip" src="{{ $image }}" data-original-title="Usuario"> 
+               <form action="{{ $route }}" method="post" class="col-md-6 form-file d-inline" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="image" id="file" class="inputfile" />
-                <label for="file" class="btn btn-outline-secondary">Changer d'avatar</label>
+                <label for="file" class="btn btn-outline-secondary mt-3">Changer d'avatar</label>
                 <input type="hidden" name="user" value="{{ $name }}">
                 <button type="submit" class="btn btn-outline-success mt-3">Valider</button>
-               </form>
+               </form>  
             </div>
+           
             <div class="col-md-6">
                 <strong>Information</strong><br>
                 <div class="table-responsive">
@@ -20,55 +21,44 @@
                             <td>
                                 <strong>
                                     <span class="glyphicon glyphicon-bookmark text-primary"></span> 
-                                    Username                                              
+                                    Nom d'utilisateur                                             
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                {{ $name }}
-                            </td>
-                        </tr>
-                        <tr>        
-                            <td>
-                                <strong>
-                                    <span class="glyphicon glyphicon-eye-open text-primary"></span> 
-                                    Role                                                
-                                </strong>
-                            </td>
-                            <td class="text-primary">
-                                Admin
+                                <span  class="user-detail">{{ $name }}</span>
                             </td>
                         </tr>
                         <tr>        
                             <td>
                                 <strong>
                                     <span class="glyphicon glyphicon-envelope text-primary"></span> 
-                                    Email                                                
+                                    E-mail                                                
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                {{ $email }} 
+                                <span  class="user-detail">{{ $email }}</span>
                             </td>
                         </tr>
                         <tr>        
                             <td>
                                 <strong>
                                     <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                    created                                                
+                                    Crée le                                                 
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                {{ $createdAt }}
+                                <span  class="user-detail">{{ $createdAt }}</span>
                             </td>
                         </tr>
                         <tr>        
                             <td>
                                 <strong>
                                     <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                    Modified                                                
+                                    Modifié le                                                 
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                 {{ __('Aucune modifiation effectué') }}
+                                 <span class="user-detail">{{ __('Aucune modifiation effectué') }}</span> 
                             </td>
                         </tr>                                    
                     </tbody>
@@ -76,5 +66,11 @@
                 </div>
             </div>
         </div>
+        @if ($errors->all())
+    <div class="alert alert-danger mt-2"> 
+        {{ $errors->all()[0] }}
     </div>
-    </div>                                        
+    @endif
+    </div>
+</div>      
+   

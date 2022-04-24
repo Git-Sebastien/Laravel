@@ -20,15 +20,15 @@
 
     
         <!-- Scripts -->
-
         <script src="https://kit.fontawesome.com/174731608d.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/intersectionObserver.js') }}" defer></script>
         <script src="{{ asset('js/main.js') }}" defer></script>
+        
        
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen  container">
+        <div class="min-h-screen  container shadow p-3 mb-5 bg-body rounded">
             @include('layouts.navigation')
             <main>
                 @yield('home')
@@ -46,7 +46,7 @@
                 <!-- Copyright -->
                 <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                   © 2020 Copyright:
-                  <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                  <a class="text-dark" href="#">Myself</a>
                 </div>
                 <!-- Copyright -->
               </footer>

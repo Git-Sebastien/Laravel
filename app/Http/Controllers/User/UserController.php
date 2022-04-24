@@ -23,19 +23,22 @@ class UserController extends Controller
         $dateTimeFormated = $dateTime->format('Ymd');
 
         $request->validate([
-            'image'=>'required|mimes:jpg,png,jpeg|max:5048'
-        ]);
+            'image'=>'required|mimes:jpg,png,jpeg,bmp|max:5000'
+        ],
+        [
+            'image.required'=>'Veuillez choisir une image'
+        ]
+        );
 
         $newImageUser = $dateTimeFormated .'-'. $request->input('user') .'.' . $request->image->extension();
-
         $request->image->move(public_path('images'. DIRECTORY_SEPARATOR.'avatar'),$newImageUser); 
-
         $idUser = $request->route('id');
-      
-             DB::table('users')
-            ->where('id','=', $idUser)
-            ->update(['image_path' => $newImageUser]);
 
-        return redirect($request->session()->previousUrl());
-    }
+            if ($request->file('image')->isValid()) {
+                DB::table('users')
+                ->where('id','=', $idUser)
+                ->update(['image_path' => $newImageUser]);
+            }
+            return redirect($request->session()->previousUrl());
+    }        
 }

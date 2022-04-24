@@ -6,7 +6,11 @@ header {
     position: sticky;
     top: 10px;
     z-index: 1;
-    background-color: rgba(0, 0, 0, .7);
+}
+
+header.text a,
+header.text button {
+    color: white;
 }
 
 .title {
@@ -14,7 +18,11 @@ header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: underline;
     text-decoration-color: rgb(167, 66, 66);
-    color: white;
+    color: black;
+}
+
+.title:hover {
+    color: rgb(167, 66, 66);
 }
 
 .title-category {
@@ -79,11 +87,16 @@ button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
     color: rgb(167, 66, 66);
 }
 
 .nav-link {
+    color: black;
+}
+
+.dropdown-menu>li>.nav-link {
     color: white;
 }
 
@@ -241,11 +254,20 @@ button {
     border-radius: 10px;
     box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
     padding: 15px;
+    width: fit-content;
 }
 
 .user-info {
     margin-top: 150px;
     margin-bottom: 233px;
+}
+
+.user-detail {
+    color: rgb(29, 26, 26);
+}
+
+.fa-user {
+    margin-right: 10px;
 }
 
 .inputfile {
@@ -254,12 +276,10 @@ button {
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    z-index: -1;
 }
 
 .inputfile+label {
-    font-size: 1.25em;
-    font-weight: 700;
+    font-size: 1em;
     color: black;
     display: inline-block;
     cursor: pointer;
@@ -293,5 +313,10 @@ input[type="reset"] {
 }
 
 .image-user {
-    max-width: 90%;
+    max-height: 48%;
+    max-width: 100%;
+}
+
+.title-category-empty {
+    margin-bottom: 50%;
 }
