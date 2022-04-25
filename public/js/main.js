@@ -9,7 +9,7 @@ if (button) {
 
 class HeaderBackground {
     set_Header_Background_Property() {
-        let position = 177;
+        let position = 167;
         let header = document.querySelector('header');
         let html = document.querySelector('html');
         let htmlPosition = html.scrollTop;
@@ -25,10 +25,30 @@ class HeaderBackground {
     }
 }
 
+let progress = function() {
+    let body = document.body;
+    let properties = {
+        "pageY": window.pageYOffset,
+        "scrollTop_doc": document.documentElement.scrollTop,
+        "scrollTop_body": document.body.scrollTop
+    }
+
+    let scrolltop = properties["pageY"] || properties["scrollTop_doc"] || properties["scrollTop_body"] || 0;
+
+    const winHeight = window.innerHeight;
+    const docHeight = body.clientHeight;
+
+    let percent = (scrolltop) / (docHeight - winHeight);
+    let percentRounded = Math.round(percent * 100);
+    let progress = document.querySelector('.progress-bar');
+    return progress.style.width = percentRounded + "%";
+}
+
 
 let headerBackground = new HeaderBackground();
 
 
 window.addEventListener('scroll', () => {
+    progress();
     headerBackground.set_Header_Background_Property();
 })

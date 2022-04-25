@@ -68,7 +68,7 @@
         </div>
         @if ($errors->all())
     <div class="alert alert-danger mt-2"> 
-        {{ $errors->all()[0] }}
+        {{ dd($errors) }}
     </div>
     @endif
     </div>

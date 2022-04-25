@@ -18,27 +18,26 @@ class UserController extends Controller
 
     public function getImage(Request $request)
     {
-        
-        $dateTime = new DateTime('now');
-        $dateTimeFormated = $dateTime->format('Ymd');
 
         $request->validate([
             'image'=>'required|mimes:jpg,png,jpeg,bmp|max:5000'
         ],
         [
-            'image.required'=>'Veuillez choisir une image'
+            'image.required'=>'Veuillez choisir une image',
+            'image.max'=>"lol"
         ]
         );
-
-        $newImageUser = $dateTimeFormated .'-'. $request->input('user') .'.' . $request->image->extension();
-        $request->image->move(public_path('images'. DIRECTORY_SEPARATOR.'avatar'),$newImageUser); 
-        $idUser = $request->route('id');
-
-            if ($request->file('image')->isValid()) {
+        
+        if($request->file('image')->isValid()){
+            $newImageUser = time() .'-'. $request->input('user') .'.' . $request->image->extension();
+            $request->image->move(public_path('images'. DIRECTORY_SEPARATOR.'avatar'),$newImageUser); 
+            $idUser = $request->route('id');
+        
+            
                 DB::table('users')
                 ->where('id','=', $idUser)
                 ->update(['image_path' => $newImageUser]);
-            }
-            return redirect($request->session()->previousUrl());
+        }
+        return redirect($request->session()->previousUrl());
     }        
 }

@@ -13,18 +13,21 @@ class CardArticle extends Component
     public $author;
 
     public $id;
+
+    public $createdAt;
  
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title,$content,$author,$id)
+    public function __construct($title,$content,$author,$id,$createdAt)
     {
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
         $this->id = $id;
+        $this->createdAt = $createdAt;
         
     }
 

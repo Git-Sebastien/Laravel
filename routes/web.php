@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Mail\MailController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Posts\PostsController;
 use App\Http\Controllers\Posts\CommentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +40,11 @@ Route::post('/posts/{post}',[PostsController::class,'show'])->name('show_post');
 Route::get('/user-info/{id}/{name}',[UserController::class,'userInfos'])->name('user');
 
 Route::post('user-info/image_profile/{id}',[UserController::class,'getImage'])->name('upload_image');
+
+
+// //////////// Mail 
+
+Route::get('/send-mail',[MailController::class,'sendMail']);
 
 
 require __DIR__.'/auth.php';

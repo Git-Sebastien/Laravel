@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Blog') }}</title>
+
+
+        <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -29,7 +32,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen  container shadow p-3 mb-5 bg-body rounded">
-            @include('layouts.navigation')
+           @include('layouts.navigation')
             <main>
                 @yield('home')
                 @yield('index')
@@ -50,9 +53,9 @@
                 </div>
                 <!-- Copyright -->
               </footer>
-
-             
-           
+        </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width:0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </body>
 </html>

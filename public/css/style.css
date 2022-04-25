@@ -1,5 +1,7 @@
 body {
+    background: url('/images/body_background.jpg');
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -41,24 +43,34 @@ button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.ul-nav-aside {
+    line-height: 4em;
+    color: white;
+    list-style: none;
+}
+
 .banner {
     position: relative;
-    height: 765px;
-    width: auto;
     height: 600px;
     background: url('/images/test_edited.jpg');
 }
 
 .banner a {
     position: absolute;
-    right: 150px;
-    bottom: 33px;
+    width: 35%;
+    transform: rotate3d(0, 2, 1, -40deg);
+    top: 104px;
+    left: 163px;
     padding: 5px;
     text-decoration: none;
     color: white;
-    font-size: 1.2em;
-    border: 1px solid;
-    border-radius: 5px;
+    font-weight: bold;
+    font-size: 4.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main-title {
+    position: absolute;
 }
 
 .banner a:hover {
@@ -96,7 +108,8 @@ button {
     color: black;
 }
 
-.dropdown-menu>li>.nav-link {
+.dropdown-menu>li>.nav-link,
+.dropdown-menu button {
     color: white;
 }
 
@@ -319,4 +332,22 @@ input[type="reset"] {
 
 .title-category-empty {
     margin-bottom: 50%;
+}
+
+.progress {
+    position: fixed;
+    bottom: 0px;
+    height: 7px;
+    width: 100%;
+    z-index: 2;
+}
+
+.progress-bar {
+    background-color: rgb(167, 66, 66);
+}
+
+.login-form {
+    height: 300px;
+    margin-top: 235px;
+    margin-bottom: 200px;
 }
