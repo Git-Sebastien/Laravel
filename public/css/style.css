@@ -4,6 +4,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.container {
+    opacity: .92;
+}
+
 header {
     position: sticky;
     top: 10px;
@@ -326,7 +330,8 @@ input[type="reset"] {
 }
 
 .image-user {
-    max-height: 48%;
+    max-height: 80%;
+    min-height: 80%;
     max-width: 100%;
 }
 

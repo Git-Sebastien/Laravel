@@ -57,9 +57,6 @@
                 </x-button>
             </div>
         </form>
-        @php
-            dd($errors)
-        @endphp
     </x-auth-card>
 </x-guest-layout>
     

@@ -1,8 +1,8 @@
 <div class="container bootstrap snippets bootdey user-info">
     <div class="panel-body inf-content">
         <div class="row">
-            <div class="col-md-4 image-user">
-                <img alt="" title="" class="img-circle image-user isTooltip" src="{{ $image }}" data-original-title="Usuario"> 
+            <div class="col-md-4">
+                <img alt="" title="" class="img-circle image-user isTooltip" src="{{ $image }}">
                <form action="{{ $route }}" method="post" class="col-md-6 form-file d-inline" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="image" id="file" class="inputfile" />

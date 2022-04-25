@@ -20,7 +20,7 @@ class CommentController extends Controller
     public function postComment(Request $request,Comment $comment)
     {   
         $this->post_id = $request->input('post_id');
-        $this->user_id = Auth::user()->id;
+        $this->user_id = Auth::user()->id ?? 0;
         
        
         $request->validate([

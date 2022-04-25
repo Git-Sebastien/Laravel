@@ -24,7 +24,6 @@ class UserController extends Controller
         ],
         [
             'image.required'=>'Veuillez choisir une image',
-            'image.max'=>"lol"
         ]
         );
         

@@ -44,7 +44,7 @@ Route::post('user-info/image_profile/{id}',[UserController::class,'getImage'])->
 
 // //////////// Mail 
 
-Route::get('/send-mail',[MailController::class,'sendMail']);
+// Route::get('/send-mail',[MailController::class,'sendMail']);
 
 
 require __DIR__.'/auth.php';
