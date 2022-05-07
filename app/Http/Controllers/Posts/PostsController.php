@@ -41,9 +41,9 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'=> 'required|max:30',
+            'title'=> 'required|max:50',
             'author'=>'required',
-            'content'=>'required|max:6000',
+            'content'=>'required|max:10000',
             'categories'=>'required'
         ]);
 

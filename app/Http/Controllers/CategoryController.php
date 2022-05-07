@@ -10,7 +10,7 @@ class CategoryController extends Controller
     {
         $posts = DB::table('posts')
         ->select()
-        ->where('category_id','=',$id)->get();
+        ->where('category_id','=',$id)->orderByDesc('created_at')->get();
         return view('posts.post',compact('posts'));
     }
 }

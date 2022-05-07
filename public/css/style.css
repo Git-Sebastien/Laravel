@@ -356,3 +356,34 @@ input[type="reset"] {
     margin-top: 235px;
     margin-bottom: 200px;
 }
+
+
+/* Media Queries */
+
+@media screen and (max-width:1200px) {
+    .banner a {
+        width: min-content;
+    }
+    .text-intro {
+        display: none;
+    }
+}
+
+@media screen and (max-width:990px) {
+    .banner a {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .banner a {
+        width: auto;
+    }
+}
+
+@media screen and (max-width:510px) {
+    .banner a {
+        margin-left: -157px;
+        width: fit-content;
+    }
+}
