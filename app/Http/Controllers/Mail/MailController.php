@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Mail;
 
 use App\Mail\ContactMail;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -12,10 +11,10 @@ class MailController extends Controller
     public function sendMail()
     {
         $content = [
-            'title' => 'Coucou mi amor',
-            'body'=> 'Tu pourra te créer un compte avec ce mail stp <3'
+            'title' => '50€ offerts',
+            'body'=> 'Blablabla si tu clique sur ce lien, tu l\'aura dans le cul.Bisous'
         ];
-
-        Mail::to('laura.santin73@gmail.com')->send(new ContactMail($content));
+        
+        Mail::to('reckex1011@gmail.com')->send(new ContactMail($content));
     }
 }

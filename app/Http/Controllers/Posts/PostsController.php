@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Posts;
 
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -49,7 +51,7 @@ class PostsController extends Controller
 
         $posts = Post::create([
             'title'=>$request->input('title'),
-            'author'=>$request->input('author'),
+            'author'=>$request->input('author') ?? Auth::user()->name,
             'content'=>$request->input('content'),
             'category_id'=>(int) $request->input('categories')
         ]);

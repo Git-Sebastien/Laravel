@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
-
-use App\Models\Post;
+use App\Models\User;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\DB;
+
 
 class CardComment extends Component
 {
@@ -17,7 +17,7 @@ class CardComment extends Component
      */
     public function __construct()
     {
-        //
+
     }
 
     /**
@@ -27,12 +27,25 @@ class CardComment extends Component
      */
     public function render()
     {   
+       
         $post_id = request()->route('post');
+
         $comments = DB::table('comment')
         ->select()
         ->where('post_id','=',$post_id)->get();
+        
+        $user = User::all(['image_path','name','default_image']);
 
-        return view('components.card-comment',compact('comments'));
+        return view('components.card-comment',compact('comments','user'));
+    }
+
+    public function sort($statement) 
+    {
+        $data = null;
+        foreach($statement as $data){
+            $statement = $data;
+        }
+        return $data;
     }
     
 }

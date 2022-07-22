@@ -52,3 +52,29 @@ window.addEventListener('scroll', () => {
     progress();
     headerBackground.set_Header_Background_Property();
 })
+
+let formRole = document.getElementById('form-role');
+
+formRole.addEventListener('submit', (e) => {
+    alert('Modification effectuer avec succés')
+})
+
+// const btn = document.getElementById('btn-img-profil');
+
+// btn.addEventListener('click', function() {
+//     document.getElementById('file').click();
+// })
+
+
+function showPreview(event) {
+    let btnChangeImg = document.getElementById('btn-change-img');
+    let btnValidImg = document.getElementById('btn-valid-img');
+    if (event.target.files.length > 0) {
+        btnChangeImg.style.display = "none";
+        btnValidImg.style.display = "block";
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("file-ip-1-preview");
+        preview.src = src;
+        preview.style.display = "block";
+    }
+}

@@ -31,7 +31,7 @@ class CommentController extends Controller
         
       
         $comment = Comment::create([
-            'author'=> $request->input('author'),
+            'author'=> $request->input('author') ?? Auth::user()->name,
             'email'=> $request->input('email'),
             'content'=> $request->input('content'),
             'post_id'=> $this->post_id,

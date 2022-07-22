@@ -27,6 +27,6 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.mail');
+        return $this->view('mail.mail')->subject('Coupon de réduction')->from('client.carrefouor@careffour.net',"Service clientèle");
     }
 }

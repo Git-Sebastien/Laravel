@@ -2,7 +2,9 @@
 
 namespace App\View\Components;
 
+
 use Illuminate\View\Component;
+
 
 class UserInfo extends Component
 {
@@ -17,19 +19,24 @@ class UserInfo extends Component
 
     public $image;
 
+    public $role;
+
+    public $idUser;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name,$email,$createdAt,$route,$image)
+    public function __construct($name,$email,$createdAt,$route,$image,$role,$idUser)
     {
         $this->name = $name;
         $this->email = $email;
         $this->createdAt = $createdAt;
         $this->route = $route;
         $this->image = $image;
+        $this->role = $role;
+        $this->idUser = $idUser;
     }
 
     /**

@@ -13,7 +13,6 @@ class HomeController extends Controller
         $post = DB::table('posts')->orderBy('created_at','asc')->get();
         $objectSort = $this->sortObjectByLast($post); 
            
-        
         return view('index',compact('objectSort'));
     }
 

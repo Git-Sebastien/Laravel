@@ -5,9 +5,9 @@
       </div>
     <div class="col-md-8 ">
       <div class="card-body">
-        <h5 class="card-title"> {{ $title }} </h5>
-        <p class="card-text"> {{ $content }}</p>
-        <p class="card-text text-muted card-author"> {{ __('Publier par') }} {{ $author }}</p>
+        <h5 class="card-title"> {{ Str::of($title)->toHtmlString()}}</h5>
+        <p class="card-text">{{ Str::of($content)->toHtmlString()}}</p>
+        <p class="card-text text-muted card-author"> {{ __('Publier par') }} {{ Str::of($author)->toHtmlString()}}</p>
       </div>
       <p class="card-text"><small class="text-muted"><a href="{{ $route }}" class="card-link">{{ __('Voir l\'article') }} <i class="fa-solid fa-right-long"></i></a> </small></p>
     </div>
