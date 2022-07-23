@@ -4,7 +4,9 @@
         <div class="row">
             <div class="mb-3 col-sm-6">
             <label for="author" class="form-label">{{ __('Nom') }}</label>
-            <input type="text" class="form-control" id="author" placeholder="Mon nom..." name="author" value="{{ Auth::user()->name ??"" }}">
+            <input type="text" class="form-control" id="author" placeholder="Mon nom..." name="author" 
+            value="{{ Auth::user()->name ?? ""}}"@if(!empty(Auth::user())) {{ "disabled" }} @endif>
+            
             </div>
             <div class="mb-3 col-sm-6" >
             <label for="title" class="form-label">{{ __('Mon email') }}</label>
