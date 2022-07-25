@@ -48,5 +48,4 @@ class CardComment extends Component
         }
         return $data;
     }
-    
 }
