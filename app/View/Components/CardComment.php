@@ -35,6 +35,10 @@ class CardComment extends Component
         ->where('post_id','=',$post_id)->get();
         
         $user = User::all(['image_path','name','default_image']);
+        
+        
+        // dd($item);
+
 
         // TODO Use join to comments to get the info in $user
         return view('components.card-comment',compact('comments','user'));
