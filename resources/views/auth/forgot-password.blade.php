@@ -6,7 +6,7 @@
             </a>
         </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
+        <div class="mb-4  mt-8 text-sm text-gray-600">
             {{ __('Vous avez oubliez votre mot de passe ? Pas de problème. Faite nous savoir votre mail et vous recevrez une lien pour en choisir un nouveau.') }}
         </div>
 

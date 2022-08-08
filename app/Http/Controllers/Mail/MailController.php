@@ -11,10 +11,13 @@ class MailController extends Controller
     public function sendMail()
     {
         $content = [
-            'title' => '50€ offerts',
-            'body'=> 'Blablabla si tu clique sur ce lien, tu l\'aura dans le cul.Bisous'
+            'title' => 'Récapitulatif de votre commande',
+            'subtitle'=> "Merci pour votre commande !",
+            'body'=> "Voici votre facture  d'un montant de 45€ pour l'article ci-dessous",
+            'img'=>'images/body_background.jpg'
         ];
         
         Mail::to('reckex1011@gmail.com')->send(new ContactMail($content));
+        Mail::to('sebastien.ancelin7@gmail.com')->send(new ContactMail($content));
     }
 }

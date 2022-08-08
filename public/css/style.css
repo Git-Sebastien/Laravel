@@ -4,6 +4,10 @@ body {
     background-repeat: no-repeat;
 }
 
+#logo {
+    width: 70px;
+}
+
 .container {
     opacity: .92;
 }
@@ -321,6 +325,7 @@ button {
     margin: auto;
     margin-bottom: 35px;
     margin-top: 25px;
+    padding: 0;
 }
 
 button,
@@ -382,6 +387,7 @@ figure:hover figcaption {
 .img-user-comment {
     display: flex;
     column-gap: 1rem;
+    background-color: lightgray;
 }
 
 .img-user-comment>img {
@@ -427,6 +433,28 @@ figure:hover figcaption {
 
 .table-striped a:hover {
     color: black;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    padding: 20px;
+}
+
+.social>li {
+    list-style: none;
+}
+
+.fa-github {
+    color: black;
+}
+
+
+/* Mail invoice */
+
+.invoice {
+    background-color: #DDDDDD;
 }
 
 

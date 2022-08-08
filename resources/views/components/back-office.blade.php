@@ -9,7 +9,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($users as $i=> $user)
+          @foreach($users as $user)
             <tr>
               <td>{{ $user->name }}</td>
               <td>{{ $user->role }}</td>
