@@ -49,17 +49,10 @@ let headerBackground = new HeaderBackground();
 
 
 window.addEventListener('scroll', () => {
-    progress();
-    headerBackground.set_Header_Background_Property();
-})
-
-let formRole = document.getElementById('form-role');
-
-formRole.addEventListener('submit', (e) => {
-    alert('Modification effectuer avec succés')
-})
-
-// const btn = document.getElementById('btn-img-profil');
+        progress();
+        headerBackground.set_Header_Background_Property();
+    })
+    // const btn = document.getElementById('btn-img-profil');
 
 // btn.addEventListener('click', function() {
 //     document.getElementById('file').click();
@@ -78,3 +71,20 @@ function showPreview(event) {
         preview.style.display = "block";
     }
 }
+
+let burger = document.querySelector('.burger');
+let nav = document.getElementById('nav');
+let navUser = document.getElementById('nav-user');
+let header = document.querySelector('header');
+let bloc = document.querySelector('.bloc');
+let buttonCategories = document.querySelector('.nav .btn-group>button');
+let dropdownMenu = document.getElementById('dropdown');
+
+
+burger.addEventListener('click', function() {
+    burger.classList.toggle('active');
+    nav.classList.toggle('nav-active');
+    navUser.classList.toggle('nav-active-user');
+    bloc.classList.toggle('active');
+    document.body.classList.toggle('overflow-hidden')
+})
