@@ -1,5 +1,5 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-around mb-4 border-bottom bg-animate">
-  <a href="{{ route('home') }}" class="nav-link px-2" id="nav-link"><img src="{{ asset('images/logo.png') }}" alt="" id="logo"></a>
+  <a href="{{ route('home') }}" class="px-2" id="nav-link"><img src="{{ asset('images/logo.png') }}" alt="" id="logo"><h1>Newspapers</h1></a>
   <ul class="nav justify-content-center" id="nav"> 
     <li><a href="{{ route('home') }}" class="nav-link px-2" id="nav-link">{{ __('Accueil') }}</a></li>
     <li><a href="{{ route('posts.index') }}" class="nav-link px-2" id="nav-link">{{ __('Articles') }}</a></li>

@@ -17,7 +17,6 @@ class HeaderBackground {
             header.style.backgroundColor = "rgba(0,0,0,.6)";
             header.style.transition = ".2s ease-in-out";
             header.classList.add('text');
-
         } else {
             header.style.backgroundColor = "white";
             header.classList.remove('text');
